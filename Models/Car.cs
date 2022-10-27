@@ -2,6 +2,10 @@
 
 namespace ParkingCar3.Models
 {
+    /// <summary>
+    /// Entidade Carro
+    /// </summary>
+
     public class Car
     {
         public int Id { get; set; }
@@ -18,7 +22,7 @@ namespace ParkingCar3.Models
 
         public DateTime DateInitial { get; set; }
 
-        public DateTime DateEnd  { get; set; }
+        public DateTime DateEnd { get; set; }
 
     }
 }
