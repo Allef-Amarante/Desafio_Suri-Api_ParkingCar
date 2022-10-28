@@ -28,7 +28,9 @@ namespace ParkingCar3
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ParkingCarContext>(o => o.UseSqlite("Data source = ParkingCars.db"));
+            var connectionString = "AccountEndpoint=https://cosmosdb-ef.documents.azure.com:443/;AccountKey=TixA9fY1fIb5y7RamBwb66eyx0aYj5SNYpv6kiephVpoI6Z6MiLiUQRRiFpcjgiMsCDgyPCFLz0hACDbsAYAOg==;";
+            var dbName = "ToDoList";
+            services.AddDbContext<ParkingCarContext>(o => o.UseCosmos(connectionString, dbName));
             services.AddScoped<ICarRepository, CarRepository>();
             services.AddScoped<IParkingRepository, ParkingRepository>();
             services.AddControllers();
